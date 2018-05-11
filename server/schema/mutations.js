@@ -25,6 +25,7 @@ const mutation = new GraphQLObjectType({
         songId: { type: GraphQLID }
       },
       resolve(parentValue, { content, songId }) {
+        console.log(content, songId);
         return Song.addLyric(songId, content);
       }
     },
